@@ -1,0 +1,32 @@
+name: Sync Repo Action
+author: GuoJun <guo_juna@qq.com>
+description: Sync repo
+branding:
+  icon: upload-cloud
+  color: yellow
+inputs:
+  source_repo_url:
+    description: source gitHub repo url
+    required: true
+  source_branch:
+    description: branch name to sync from
+    required: true
+  dest_repo_url:
+    description: dest repo url
+    required: true
+  dest_branch:
+    description: branch name to sync to
+    required: true
+  ssh_private_key:
+    description: SSH key used to authenticate with git clone urls provided 
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    SSH_PRIVATE_KEY: ${{ inputs.ssh_private_key }}
+  args:
+    - ${{ inputs.source_repo_url }}
+    - ${{ inputs.source_branch }}
+    - ${{ inputs.dest_repo_url }}
+    - ${{ inputs.dest_branch }}
