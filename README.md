@@ -2,6 +2,9 @@
 # sync-repo-action
 
 同步仓库代码的Action
+![](https://gitee.com/guojuna/images/raw/master/blog-img/2020/09/20200901125610.png))
+
+[更多详情](https://github.com/marketplace/actions/sync-repo-action)
 
 ## Usage
 
